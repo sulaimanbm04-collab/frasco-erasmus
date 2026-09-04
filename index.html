@@ -21,7 +21,7 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:13px;font:inhe
 .msg{margin-top:15px;line-height:1.7}.success{padding:18px;border-radius:16px;background:#f4f0ff}
 .media{width:100%;border-radius:18px;margin-top:12px;max-height:440px;object-fit:cover}
 .note{color:var(--muted);font-size:.92rem;line-height:1.6}.back{background:#eee;color:#333;margin-top:12px;width:100%}
-.final{border:2px solid #eadcf9}
+.final{border:2px solid #eadcf9}.welcome{text-align:center}.secret{margin-top:22px;padding:18px;border-radius:18px;background:#fff8f0;font-size:1.05rem}.secret span{display:inline-block;margin:0 8px;font-weight:bold}
 footer{text-align:center;color:#8b8282;margin-top:30px;font-size:.9rem}
 </style>
 </head>
@@ -30,20 +30,19 @@ footer{text-align:center;color:#8b8282;margin-top:30px;font-size:.9rem}
 <section class="hero">
 <div class="jar">🫙</div>
 <h1>25 pedacitos de nosotros</h1>
-<p class="subtitle">Un pequeño lugar para guardar nuestros recuerdos mientras estamos lejos.<br>Solo tú puedes acceder a ellos si das con la respuesta a las preguntas ;)</p>
+<p class="subtitle">Un pequeño lugar para guardar nuestros recuerdos mientras estamos lejos.<br>Las preguntas están escondidas en 25 pequeñas llaves. Cada QR abre una diferente ;).</p>
 </section>
 
 <section id="home">
-<div class="grid">
-<button class="cat yellow" onclick="openCard(1)"><b>💛 Sonríe</b><small>5 momentos</small></button>
-<button class="cat blue" onclick="openCard(6)"><b>💙 Cuando me eches de menos</b><small>5 sorpresas</small></button>
-<button class="cat green" onclick="openCard(11)"><b>💚 Razones para confiar</b><small>5 mensajes</small></button>
-<button class="cat red" onclick="openCard(16)"><b>❤️ Nosotros</b><small>5 historias</small></button>
-<button class="cat white" onclick="openCard(21)"><b>🤍 Recuerdos</b><small>5 recuerdos</small></button>
+<div class="card welcome">
+<h2>Esto no es una página normal…</h2>
+<p class="note">Esta página es solo la puerta de entrada. Las preguntas están escondidas en 25 QR diferentes y no aparecen aquí.</p>
+<p class="note">Cuando tengas uno de los papelitos, escanea su QR y podrás descubrir su pregunta. 🤎</p>
+<div class="secret">🫙 <span>25 recuerdos guardados para ti</span> 🫙</div>
 </div>
 <div class="card">
-<h2>Cómo jugar</h2>
-<p class="note">Cada papelito tendrá un QR. El QR abrirá una de estas pruebas. Resuelve el acertijo para descubrir el recuerdo escondido.</p>
+<h2>Una última cosa…</h2>
+<p class="note">No intentes buscar las preguntas aquí. Cada una tiene su propia llave. 😉</p>
 </div>
 </section>
 
@@ -98,9 +97,12 @@ function check(num){
 
 function backHome(){document.getElementById('card').classList.add('hidden');document.getElementById('home').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
 
-// Permite que cada QR abra directamente su acertijo: tuweb/?c=1, ?c=2, etc.
+// Cada QR abre directamente su acertijo mediante ?c=1 ... ?c=25.
+// La página principal NO muestra ningún listado ni acceso a las preguntas.
 const qrCard = new URLSearchParams(window.location.search).get('c');
-if(qrCard && /^\d+$/.test(qrCard) && Number(qrCard)>=1 && Number(qrCard)<=25){ openCard(Number(qrCard)); }
+if(qrCard && /^\d+$/.test(qrCard) && Number(qrCard)>=1 && Number(qrCard)<=25){
+  openCard(Number(qrCard));
+}
 </script>
 </body>
 </html>
