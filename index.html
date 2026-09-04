@@ -14,7 +14,7 @@ h1{font-size:clamp(2rem,7vw,4rem);margin:10px 0}.subtitle{font-size:1.08rem;line
 button,.choice{font:inherit;border:0;border-radius:18px;padding:16px;cursor:pointer;transition:.2s}
 button:hover,.choice:hover{transform:translateY(-2px)}
 .cat{background:white;box-shadow:0 8px 24px #0000000d}.cat b{display:block;font-size:1.15rem}.cat small{color:var(--muted)}
-.red{--accent:#d94a5f}.yellow{--accent:#d49a1e}.blue{--accent:#4788c7}.green{--accent:#5a9b72}.purple{--accent:#8b5cf6}
+.yellow{--accent:#d49a1e}.green{--accent:#5a9b72}.blue{--accent:#4788c7}.red{--accent:#d94a5f}.white{--accent:#777;background:#fff;border:1px solid #e7e1dc}
 .card{background:var(--card);border-radius:26px;padding:28px;box-shadow:0 12px 35px #00000012;margin-top:22px}
 .hidden{display:none}.number{color:var(--accent);font-weight:bold;letter-spacing:.08em}.question{font-size:1.35rem;line-height:1.5;margin:16px 0}
 input{width:100%;padding:14px;border:1px solid #ddd;border-radius:13px;font:inherit;margin:8px 0 12px} .action{background:var(--accent);color:white;width:100%}
@@ -30,21 +30,20 @@ footer{text-align:center;color:#8b8282;margin-top:30px;font-size:.9rem}
 <section class="hero">
 <div class="jar">🫙</div>
 <h1>25 pedacitos de nosotros</h1>
-<p class="subtitle">Un pequeño lugar para guardar recuerdos mientras estamos lejos.<br>Escanea, recuerda, adivina… y descubre lo que hay detrás de cada papelito.</p>
+<p class="subtitle">Un pequeño lugar para guardar nuestros recuerdos mientras estamos lejos.<br>Solo tú puedes acceder a ellos si das con la respuesta a las preguntas ;)</p>
 </section>
 
 <section id="home">
 <div class="grid">
-<button class="cat red" onclick="openCard(1)"><b>❤️ Nosotros</b><small>5 recuerdos</small></button>
-<button class="cat yellow" onclick="openCard(6)"><b>💛 Sonríe</b><small>5 momentos</small></button>
-<button class="cat blue" onclick="openCard(11)"><b>💙 Cuando me eches de menos</b><small>5 sorpresas</small></button>
-<button class="cat green" onclick="openCard(16)"><b>💚 Cuando vuelva</b><small>5 planes</small></button>
-<button class="cat purple" onclick="openCard(21)"><b>💜 Solo tú sabes</b><small>5 secretos</small></button>
+<button class="cat yellow" onclick="openCard(1)"><b>💛 Sonríe</b><small>5 momentos</small></button>
+<button class="cat blue" onclick="openCard(6)"><b>💙 Cuando me eches de menos</b><small>5 sorpresas</small></button>
+<button class="cat green" onclick="openCard(11)"><b>💚 Razones para confiar</b><small>5 mensajes</small></button>
+<button class="cat red" onclick="openCard(16)"><b>❤️ Nosotros</b><small>5 historias</small></button>
+<button class="cat white" onclick="openCard(21)"><b>🤍 Recuerdos</b><small>5 recuerdos</small></button>
 </div>
 <div class="card">
 <h2>Cómo jugar</h2>
 <p class="note">Cada papelito tendrá un QR. El QR abrirá una de estas pruebas. Resuelve el acertijo para descubrir el recuerdo escondido.</p>
-<p class="note"><b>Consejo:</b> cambia los textos entre corchetes por vuestras cosas reales y añade tus fotos/audios en las carpetas indicadas.</p>
 </div>
 </section>
 
@@ -54,35 +53,35 @@ footer{text-align:center;color:#8b8282;margin-top:30px;font-size:.9rem}
 
 <script>
 const data = [
-{n:1,c:'red',title:'Nuestro comienzo',q:'¿Dónde empezó realmente nuestra historia?',a:'[LUGAR_PRIMER_BESO]',content:'Aquí puedes poner una foto del comienzo y una frase que solo tenga sentido para vosotros.',media:'fotos/foto01.jpg'},
-{n:2,c:'red',title:'El día que elegiría otra vez',q:'¿Cuál es la fecha que para nosotros merece quedarse en el calendario?',a:'[FECHA_IMPORTANTE]',content:'Escribe aquí por qué ese día es importante.',media:'fotos/foto02.jpg'},
-{n:3,c:'red',title:'La primera vez',q:'¿Qué fue lo primero que hicimos juntos que después se convirtió en “lo nuestro”?',a:'[RESPUESTA_03]',content:'Añade aquí el recuerdo.',media:'fotos/foto03.jpg'},
-{n:4,c:'red',title:'Nuestra canción',q:'¿Qué canción no significa lo mismo cuando la escuchamos nosotros?',a:'[CANCION_ESPECIAL]',content:'Pon aquí el enlace de la canción o una pequeña historia sobre ella.'},
-{n:5,c:'red',title:'Ese recuerdo',q:'¿Qué pasó en aquel momento que todavía nos hace sonreír?',a:'[RESPUESTA_05]',content:'Aquí va una foto o vídeo especial.',media:'fotos/foto05.jpg'},
+{n:1,c:'yellow',title:'Nuestro comienzo',q:'¿Dónde empezó realmente nuestra historia?',a:'[LUGAR_PRIMER_BESO]',content:'Aquí puedes poner una foto del comienzo y una frase que solo tenga sentido para vosotros.',media:'fotos/foto01.jpg'},
+{n:2,c:'yellow',title:'El día que elegiría otra vez',q:'¿Cuál es la fecha que para nosotros merece quedarse en el calendario?',a:'[FECHA_IMPORTANTE]',content:'Escribe aquí por qué ese día es importante.',media:'fotos/foto02.jpg'},
+{n:3,c:'yellow',title:'La primera vez',q:'¿Qué fue lo primero que hicimos juntos que después se convirtió en “lo nuestro”?',a:'[RESPUESTA_03]',content:'Añade aquí el recuerdo.',media:'fotos/foto03.jpg'},
+{n:4,c:'yellow',title:'Nuestra canción',q:'¿Qué canción no significa lo mismo cuando la escuchamos nosotros?',a:'[CANCION_ESPECIAL]',content:'Pon aquí el enlace de la canción o una pequeña historia sobre ella.'},
+{n:5,c:'yellow',title:'Ese recuerdo',q:'¿Qué pasó en aquel momento que todavía nos hace sonreír?',a:'[RESPUESTA_05]',content:'Aquí va una foto o vídeo especial.',media:'fotos/foto05.jpg'},
 
-{n:6,c:'yellow',title:'La foto prohibida',q:'¿Qué estaba pasando cuando se hizo aquella foto que nunca deberíamos enseñar?',a:'[RESPUESTA_06]',content:'Añade aquí vuestra foto más graciosa.',media:'fotos/foto06.jpg'},
-{n:7,c:'yellow',title:'Nuestra frase',q:'Completa nuestra frase o broma interna: “[FRASE_INCOMPLETA]”',a:'[PALABRA_07]',content:'Mensaje/meme/broma para hacerle sonreír.'},
-{n:8,c:'yellow',title:'¿Cuál ocurrió?',q:'¿Cuál de estas tres historias ocurrió de verdad? Escribe A, B o C.',a:'[A/B/C_08]',content:'Cuenta aquí la historia real.'},
-{n:9,c:'yellow',title:'Una voz conocida',q:'¿Qué frase digo yo que reconocerías incluso con los ojos cerrados?',a:'[RESPUESTA_09]',content:'Aquí puedes poner un audio tuyo: audios/audio01.mp3'},
-{n:10,c:'yellow',title:'No deberías haber abierto esto',q:'¿Qué palabra usamos para aquella situación absurda?',a:'[PALABRA_10]',content:'SORPRESA: coloca aquí una foto especialmente graciosa.',media:'fotos/foto10.jpg'},
+{n:6,c:'blue',title:'La foto prohibida',q:'¿Qué estaba pasando cuando se hizo aquella foto que nunca deberíamos enseñar?',a:'[RESPUESTA_06]',content:'Añade aquí vuestra foto más graciosa.',media:'fotos/foto06.jpg'},
+{n:7,c:'blue',title:'Nuestra frase',q:'Completa nuestra frase o broma interna: “[FRASE_INCOMPLETA]”',a:'[PALABRA_07]',content:'Mensaje/meme/broma para hacerle sonreír.'},
+{n:8,c:'blue',title:'¿Cuál ocurrió?',q:'¿Cuál de estas tres historias ocurrió de verdad? Escribe A, B o C.',a:'[A/B/C_08]',content:'Cuenta aquí la historia real.'},
+{n:9,c:'blue',title:'Una voz conocida',q:'¿Qué frase digo yo que reconocerías incluso con los ojos cerrados?',a:'[RESPUESTA_09]',content:'Aquí puedes poner un audio tuyo: audios/audio01.mp3'},
+{n:10,c:'blue',title:'No deberías haber abierto esto',q:'¿Qué palabra usamos para aquella situación absurda?',a:'[PALABRA_10]',content:'SORPRESA: coloca aquí una foto especialmente graciosa.',media:'fotos/foto10.jpg'},
 
-{n:11,c:'blue',title:'Cuando me eches de menos',q:'¿Qué pequeño detalle mío dices que siempre reconoces?',a:'[RESPUESTA_11]',content:'“Si estás leyendo esto porque me echas de menos, escucha esto…” Puedes añadir un audio en audios/audio02.mp3.'},
-{n:12,c:'blue',title:'Una canción para hoy',q:'¿Qué canción elegimos aquella vez?',a:'[CANCION_12]',content:'Añade aquí el enlace a la canción y unas líneas tuyas.'},
-{n:13,c:'blue',title:'Una visita en vídeo',q:'¿Qué lugar de nosotros aparece en este vídeo?',a:'[LUGAR_13]',content:'Aquí puedes poner un vídeo tuyo o un enlace privado.'},
-{n:14,c:'blue',title:'Cinco cosas',q:'¿Cuántas cosas voy a decirte aquí?',a:'5',content:'1. [COSA_1]<br>2. [COSA_2]<br>3. [COSA_3]<br>4. [COSA_4]<br>5. [COSA_5]'},
-{n:15,c:'blue',title:'Carta',q:'¿Qué palabra utilizamos para describir aquel día?',a:'[PALABRA_15]',content:'<b>Para ti:</b><br><br>[ESCRIBE_AQUÍ_TU_CARTA]'} ,
+{n:11,c:'green',title:'Cuando me eches de menos',q:'¿Qué pequeño detalle mío dices que siempre reconoces?',a:'[RESPUESTA_11]',content:'“Si estás leyendo esto porque me echas de menos, escucha esto…” Puedes añadir un audio en audios/audio02.mp3.'},
+{n:12,c:'green',title:'Una canción para hoy',q:'¿Qué canción elegimos aquella vez?',a:'[CANCION_12]',content:'Añade aquí el enlace a la canción y unas líneas tuyas.'},
+{n:13,c:'green',title:'Una visita en vídeo',q:'¿Qué lugar de nosotros aparece en este vídeo?',a:'[LUGAR_13]',content:'Aquí puedes poner un vídeo tuyo o un enlace privado.'},
+{n:14,c:'green',title:'Cinco cosas',q:'¿Cuántas cosas voy a decirte aquí?',a:'5',content:'1. [COSA_1]<br>2. [COSA_2]<br>3. [COSA_3]<br>4. [COSA_4]<br>5. [COSA_5]'},
+{n:15,c:'green',title:'Carta',q:'¿Qué palabra utilizamos para describir aquel día?',a:'[PALABRA_15]',content:'<b>Para ti:</b><br><br>[ESCRIBE_AQUÍ_TU_CARTA]'} ,
 
-{n:16,c:'green',title:'Primer plan cuando vuelva',q:'¿Qué dijimos que haríamos primero cuando vuelva?',a:'[PLAN_16]',content:'Nuestro primer plan: [PLAN_16].'},
-{n:17,c:'green',title:'Un lugar pendiente',q:'¿A qué sitio quiero llevarte cuando vuelva?',a:'[LUGAR_17]',content:'Añade una foto o mapa del lugar.',media:'fotos/foto17.jpg'},
-{n:18,c:'green',title:'Algo que nos queda',q:'¿Qué cosa dijimos tantas veces que haríamos juntos?',a:'[PLAN_18]',content:'Aquí va el plan pendiente.'},
-{n:19,c:'green',title:'Nuestro día perfecto',q:'¿A qué hora empieza nuestro día perfecto?',a:'[HORA_19]',content:'10:00 — [PLAN]<br>12:00 — [PLAN]<br>15:00 — [PLAN]<br>18:00 — [PLAN]<br>Y después… [FINAL]'},
-{n:20,c:'green',title:'Un futuro',q:'¿Qué palabra resume lo que quiero hacer cuando vuelva?',a:'[PALABRA_20]',content:'Este QR no guarda un recuerdo. Guarda algo que todavía no ha pasado: [FUTURO]'} ,
+{n:16,c:'red',title:'Primer plan cuando vuelva',q:'¿Qué dijimos que haríamos primero cuando vuelva?',a:'[PLAN_16]',content:'Nuestro primer plan: [PLAN_16].'},
+{n:17,c:'red',title:'Un lugar pendiente',q:'¿A qué sitio quiero llevarte cuando vuelva?',a:'[LUGAR_17]',content:'Añade una foto o mapa del lugar.',media:'fotos/foto17.jpg'},
+{n:18,c:'red',title:'Algo que nos queda',q:'¿Qué cosa dijimos tantas veces que haríamos juntos?',a:'[PLAN_18]',content:'Aquí va el plan pendiente.'},
+{n:19,c:'red',title:'Nuestro día perfecto',q:'¿A qué hora empieza nuestro día perfecto?',a:'[HORA_19]',content:'10:00 — [PLAN]<br>12:00 — [PLAN]<br>15:00 — [PLAN]<br>18:00 — [PLAN]<br>Y después… [FINAL]'},
+{n:20,c:'red',title:'Un futuro',q:'¿Qué palabra resume lo que quiero hacer cuando vuelva?',a:'[PALABRA_20]',content:'Este QR no guarda un recuerdo. Guarda algo que todavía no ha pasado: [FUTURO]'} ,
 
-{n:21,c:'purple',title:'La palabra secreta',q:'¿Cuál es esa palabra que para cualquiera sería normal, pero para nosotros lo significa todo?',a:'[PALABRA_SECRETA]',content:'Has encontrado una de nuestras pequeñas claves.'},
-{n:22,c:'purple',title:'Tres pistas',q:'Pista 1: ocurrió de noche. Pista 2: nos reímos muchísimo. Pista 3: desde entonces decimos “[FRASE]”. ¿Qué pasó?',a:'[RESPUESTA_22]',content:'Cuenta aquí la historia completa.'},
-{n:23,c:'purple',title:'Solo tú',q:'¿Qué fue lo primero que notaste de mí?',a:'[RESPUESTA_23]',content:'Aquí puedes contar qué fue lo primero que tú notaste de ella.'},
-{n:24,c:'purple',title:'La última pista',q:'Para abrir esta puerta necesitas juntar una fecha, una palabra y un lugar. Escribe aquí las tres separadas por guiones.',a:'[FECHA_IMPORTANTE]-[PALABRA_SECRETA]-[LUGAR_PRIMER_BESO]',content:'¡Casi has llegado! Ahora abre el papel final.'},
-{n:25,c:'purple',title:'La última puerta ❤️',q:'Escribe la contraseña final.',a:'[CONTRASEÑA_FINAL]',content:'<h2>Has llegado al final.</h2><p>Pero en realidad esto nunca ha ido de los 25 QR. Ha ido de todas esas cosas pequeñas que hemos ido acumulando sin darnos cuenta.</p><p>Aunque durante un tiempo haya kilómetros entre nosotros, todas esas cosas siguen siendo nuestras.</p><p><b>Así que guarda este frasco. Y cuando vuelva, quiero que lo abramos juntos otra vez.</b></p><p>❤️ Te quiero.</p>'}
+{n:21,c:'white',title:'La palabra secreta',q:'¿Cuál es esa palabra que para cualquiera sería normal, pero para nosotros lo significa todo?',a:'[PALABRA_SECRETA]',content:'Has encontrado una de nuestras pequeñas claves.'},
+{n:22,c:'white',title:'Tres pistas',q:'Pista 1: ocurrió de noche. Pista 2: nos reímos muchísimo. Pista 3: desde entonces decimos “[FRASE]”. ¿Qué pasó?',a:'[RESPUESTA_22]',content:'Cuenta aquí la historia completa.'},
+{n:23,c:'white',title:'Solo tú',q:'¿Qué fue lo primero que notaste de mí?',a:'[RESPUESTA_23]',content:'Aquí puedes contar qué fue lo primero que tú notaste de ella.'},
+{n:24,c:'white',title:'La última pista',q:'Para abrir esta puerta necesitas juntar una fecha, una palabra y un lugar. Escribe aquí las tres separadas por guiones.',a:'[FECHA_IMPORTANTE]-[PALABRA_SECRETA]-[LUGAR_PRIMER_BESO]',content:'¡Casi has llegado! Ahora abre el papel final.'},
+{n:25,c:'white',title:'La última puerta ❤️',q:'Escribe la contraseña final.',a:'[CONTRASEÑA_FINAL]',content:'<h2>Has llegado al final.</h2><p>Pero en realidad esto nunca ha ido de los 25 QR. Ha ido de todas esas cosas pequeñas que hemos ido acumulando sin darnos cuenta.</p><p>Aunque durante un tiempo haya kilómetros entre nosotros, todas esas cosas siguen siendo nuestras.</p><p><b>Así que guarda este frasco. Y cuando vuelva, quiero que lo abramos juntos otra vez.</b></p><p>❤️ Te quiero.</p>'}
 ];
 
 function normalize(s){return s.toString().trim().toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/\\s+/g,' ')}
